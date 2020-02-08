@@ -11,7 +11,7 @@ echo "Set root password:"
 passwd
 
 # Set timezone (or use tzselect)
-ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # Set locales and generate them
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
