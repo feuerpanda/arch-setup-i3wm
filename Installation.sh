@@ -26,6 +26,7 @@ pacman-key --init
 pacman-key --populate archlinux
 
 # Configure mkinitcpio
+pacman -S mkinitcpio
 sed -i '/^HOOKS=/s/block/block keymap encrypt/' /etc/mkinitcpio.conf
 
 # Create a new initial RAM disk
