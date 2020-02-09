@@ -30,14 +30,17 @@ mount /dev/mapper/root /mnt
 mkdir /mnt/boot && mount /dev/sda1 /mnt/boot
 
 # Select the mirrors
-pacman -Sy pacman-contrib
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-wget -O - "https://www.archlinux.org/mirrorlist/?country=CN&protocol=https&ip_version=4&use_mirror_status=on" | sed 's/^#Server/Server/' > /etc/pacman.d/mirrorlist.tmp
-rankmirrors -n 10 /etc/pacman.d/mirrorlist.tmp > /etc/pacman.d/mirrorlist
-rm /etc/pacman.d/mirrorlist.tmp
+echo 'Server = https://mirrors.163.com/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+#pacman -Sy pacman-contrib
+#cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+#wget -O - "https://www.archlinux.org/mirrorlist/?country=CN&protocol=https&ip_version=4&use_mirror_status=on" | sed 's/^#Server/Server/' > /etc/pacman.d/mirrorlist.tmp
+#rankmirrors -n 10 /etc/pacman.d/mirrorlist.tmp > /etc/pacman.d/mirrorlist
+#rm /etc/pacman.d/mirrorlist.tmp
 
 # Install the base packages
 pacstrap /mnt base base-devel
+pacstrap /mnt linux linux-firmware
+
 
 # Configure crypttab
 SWAP="$(find -L /dev/disk/by-partuuid -samefile /dev/sda2 | cut -d/ -f5)"
