@@ -24,7 +24,7 @@ ufw default deny
 ufw enable
 
 # Configure Keyboardlayout
-localectl set-x11-keymap de pc105 nodeadkeys
+localectl set-x11-keymap us pc105 nodeadkeys
 
 # Remove installation files
 rm -R /i-PUSH-arch-setup-i3wm/
