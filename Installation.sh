@@ -18,6 +18,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "LANGUAGE=en_US" >> /etc/locale.conf
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 locale-gen
+setxkbmap -layout us
 
 # Fix pacman: Signature is unknown trust
 rm -Rf /etc/pacman.d/gnupg
