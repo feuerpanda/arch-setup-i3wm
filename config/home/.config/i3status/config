@@ -9,7 +9,7 @@ general {
 }
 
 order += "volume master"
-order += "battery 0"
+order += "battery 1"
 order += "tztime local"
 
 volume master {
@@ -20,7 +20,7 @@ volume master {
 	mixer_idx = 0
 }
 
-battery 0 {
+battery 1 {
 	format = "<span background='#50fa7b'>  ⚡ %percentage  </span>"
 }
 
